@@ -2,6 +2,7 @@ package com.example.renat.hikeynp;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 
@@ -23,11 +25,29 @@ public class MainActivity extends AppCompatActivity {
 
     ExpandableListView expandableListView;
 
+    //making variables for each button
+    private static Button trail_map_button;
+    private static Button todo_list_button;
+    private static Button photos_button;
+    private static Button best_hikes_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //show icon in action bar
+        toolbar.setLogo(R.drawable.ic_launcher);
+
+        //defining methods for opening new activities on button click
+        OnClickTrailMap();
+        OnClickTodoList();
+        OnClickPhotos();
+        OnClickBestHikes();
 
         expandableListView = (ExpandableListView)findViewById(R.id.exp_listview);
         List<String> Headings = new ArrayList<String>();
@@ -91,15 +111,63 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter myAdapter = new MyAdapter(this,Headings,ChildList);
         expandableListView.setAdapter(myAdapter);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
     }
 
+    //method for opening trail google map activity
+    public void OnClickTrailMap(){
+        trail_map_button = (Button)findViewById(R.id.trail_map_button);
+        trail_map_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent1 = new Intent("com.google.android.gms.maps.SupportMapFragment");
+                        startActivity(intent1);
+                    }
+                }
+        );
+    }
 
+    //method for opening your to-do list
+    public void OnClickTodoList(){
+        todo_list_button = (Button)findViewById(R.id.todo_list_button);
+        todo_list_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent2 = new Intent("com.example.renat.hikeynp.todo_list");
+                        startActivity(intent2);
+                    }
+                }
+        );
+    }
 
+    //method for opening gallery of your own photos
+    public void OnClickPhotos(){
+        photos_button = (Button)findViewById(R.id.photos_button);
+        photos_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent3 = new Intent("com.example.renat.hikeynp.photos");
+                        startActivity(intent3);
+                    }
+                }
+        );
+    }
 
+    //method for opening best hikes activity
+    public void OnClickBestHikes(){
+        best_hikes_button = (Button)findViewById(R.id.best_hikes_button);
+        best_hikes_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent4 = new Intent("com.example.renat.hikeynp.best_hikes");
+                        startActivity(intent4);
+                    }
+                }
+        );
+    }
 
 
     @Override

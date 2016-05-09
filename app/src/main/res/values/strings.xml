@@ -4,7 +4,7 @@
     <string name="details_text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero velit, placerat in sodales in, iaculis eu odio. Integer arcu ipsum, fermentum in sem quis, tempor interdum quam. Maecenas non risus purus. Duis a viverra massa. Maecenas sit amet arcu nec lectus convallis molestie. Praesent elit sem, egestas quis facilisis ut, luctus in arcu. Nunc auctor neque vitae augue auctor vulputate. Vivamus cursus justo sed turpis consectetur, nec sodales ipsum condimentum. Pellentesque ac feugiat lorem. Nunc cursus erat at gravida condimentum. In hac habitasse platea dictumst.
     </string>
-    
+
     <string-array name="header_titles">
         <item>Details</item>
         <item>Seasons</item>
@@ -35,5 +35,7 @@
     <string-array name="other_activities">
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque libero velit, placerat in sodales in, iaculis eu odio. Integer arcu ipsum, fermentum in sem quis, tempor interdum quam. Maecenas non risus purus. Duis a viverra massa. Maecenas sit amet arcu nec lectus convallis molestie. Praesent elit sem, egestas quis facilisis ut, luctus in arcu. Nunc auctor neque vitae augue auctor vulputate.</item>
     </string-array>
+    <string name="title_activity_trail_map">Map</string>
+    <string name="trail_map_button">TRAIL MAP</string>
 
 </resources>

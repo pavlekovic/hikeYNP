@@ -7,17 +7,78 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.renat.hikeynp.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#000000">
+
+
+    <ImageView
+        android:layout_width="12480dp"
+        android:layout_height="227dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ynp_pic1"
+        android:adjustViewBounds="true" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trail_map_button"
+        android:id="@+id/trail_map_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1"
+        android:layout_weight="0.94">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TO-DO LIST"
+            android:id="@+id/todo_list_button"
+            android:layout_weight="0.25"
+            android:layout_marginLeft="5dp"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHOTOS"
+            android:id="@+id/photos_button"
+            android:layout_weight="0.25"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BEST HIKES"
+            android:id="@+id/best_hikes_button"
+            android:layout_weight="0.25"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    </LinearLayout>
 
     <ExpandableListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="219dp"
         android:id="@+id/exp_listview"
         android:dividerHeight="1dp"
         android:childDivider="#bfbfbf"
-        android:groupIndicator="@null"
-
-        >
+        android:groupIndicator="@null">
     </ExpandableListView>
 
 </LinearLayout>
